@@ -3,8 +3,8 @@
 
 <dom-module id="icon-toggle">
 
-
   <template>
+
     <style>
       /* local styles go here */
       :host {
@@ -20,15 +20,25 @@
     </style>
 
     <!-- local DOM goes here -->
-    <iron-icon icon="polymer">
+    <iron-icon icon="[[toggleIcon]]">
     </iron-icon>
+
   </template>
 
   <script>
-  Polymer({
-    is: 'icon-toggle',
-  });
+    Polymer({
+      /* this is the element's prototype */
+      is: 'icon-toggle',
+      properties: {
+        toggleIcon: String,
+        pressed: {
+          type: Boolean,
+          value: false,
+          notify: true,
+          reflectToAttribute: true
+        }
+      }
+    });
   </script>
 
 </dom-module>
-
